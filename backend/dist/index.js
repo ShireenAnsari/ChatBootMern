@@ -1,6 +1,8 @@
 import app from "./app.js";
 import { connectToDatabase } from "./db/connection.js";
 import { config } from 'dotenv';
+import dotenv from 'dotenv';
+dotenv.config();
 config();
 const Port = process.env.PORT || 5000;
 connectToDatabase().then(() => {

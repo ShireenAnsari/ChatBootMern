@@ -17,7 +17,9 @@ export const Signup=async(req:Request,res:Response,next:NextFunction)=>{
     try {
         // user signup
         const {name,email,password}=req.body;
+        
         const existingUser=await UserModels.findOne({email})
+        console.log(existingUser)
         if(existingUser) return res.status(401).send("User already registered")
         const hashedPassword=await hash(password,10)
         const user= new UserModels({name,email,password:hashedPassword})
