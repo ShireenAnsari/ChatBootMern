@@ -34,33 +34,33 @@ if(inputRef && inputRef.current)
   
 
   }
-  const chatMessages = [
-    {
-      role: "user",
-      content: "Hello, how are you?",
-    },
-    {
-      role: "assistant",
-      content: "I'm doing well, thank you! How can I assist you today?",
-    },
-    {
-      role: "user",
-      content: "I need help with some programming concepts.",
-    },
-    {
-      role: "assistant",
-      content: "Of course! What specifically would you like to know?",
-    },
-    {
-      role: "user",
-      content: "Can you explain recursion to me?",
-    },
-    {
-      role: "assistant",
-      content:
-        "Certainly! Recursion is a programming technique where a function calls itself in order to solve smaller instances of a problem.",
-    },
-  ];
+  // const chatMessages = [
+  //   {
+  //     role: "user",
+  //     content: "Hello, how are you?",
+  //   },
+  //   {
+  //     role: "assistant",
+  //     content: "I'm doing well, thank you! How can I assist you today?",
+  //   },
+  //   {
+  //     role: "user",
+  //     content: "I need help with some programming concepts.",
+  //   },
+  //   {
+  //     role: "assistant",
+  //     content: "Of course! What specifically would you like to know?",
+  //   },
+  //   {
+  //     role: "user",
+  //     content: "Can you explain recursion to me?",
+  //   },
+  //   {
+  //     role: "assistant",
+  //     content:
+  //       "Certainly! Recursion is a programming technique where a function calls itself in order to solve smaller instances of a problem.",
+  //   },
+  // ];
 
   const auth = useAuth();
   return (
@@ -163,7 +163,7 @@ if(inputRef && inputRef.current)
             overflowY: "auto",
           }}
         >
-          {chatMessages?.map((chat, index) => (
+          {messages?.map((chat, index) => (
             //@ts-ignore
             <Chatitem content={chat.content} role={chat.role} key={index} />
           ))}

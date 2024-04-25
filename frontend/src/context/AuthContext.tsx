@@ -7,14 +7,14 @@ type User = {
 };
 
 type UserAuth = {
-    isLoggedIn: boolean;
-    user: User | null;
-    login: (email: string, password: string) => Promise<void>;
-    signup: (name: string, email: string, password: string) => Promise<void>;
-    logout: () => Promise<void>;
-};
+    isLoggedIn: boolean
+    user: User | null
+    login: (email: string, password: string) => Promise<void>
+    signup: (name: string, email: string, password: string) => Promise<void>
+    logout: () => Promise<void>
+}
 
-const AuthContext = createContext<UserAuth | null>(null);
+const AuthContext = createContext<UserAuth | null>(null)
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const [user, setUser] = useState<User | null>(null);
